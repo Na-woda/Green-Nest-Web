@@ -17,24 +17,10 @@ const C = {
     warnBg: "#faeeda",
     warnText: "#854f0b",
     barBg: "#f0f0f0",
-
+}
 
 // ─── Color tokens ────────────────────────────────────────────────────────────
-const C = {
-  sidebar:   "#0f1a12",
-  sidebarBorder: "rgba(255,255,255,0.08)",
-  green:     "#1d9e75",
-  greenLight:"#5dcaa5",
-  greenPale: "#e1f5ee",
-  greenMid:  "#9fe1cb",
-  successBg: "#eaf3de",
-  successText:"#3b6d11",
-  successDark:"#27500a",
-  warnBg:    "#faeeda",
-  warnText:  "#854f0b",
-  barBg:     "#f0f0f0",
 
-};
 
 // ─── Sidebar nav items ────────────────────────────────────────────────────────
 const NAV = [
@@ -48,18 +34,6 @@ const NAV = [
     { label: "Users", sub: "Access", icon: "👥", id: "users" },
     { label: "Orders", sub: "Fulfillment", icon: "📦", id: "orders" },
     { label: "Settings", sub: "System", icon: "⚙️", id: "settings" },
-
-  { label: "Dashboard",        sub: "Overview",     icon: "📊", id: "dashboard" },
-  { label: "Home Management",  sub: "Homepage",     icon: "🏠", id: "home" },
-  { label: "Shop Management",  sub: "Catalog",      icon: "🛍️", id: "shop" },
-  { label: "Categories",       sub: "Taxonomy",     icon: "🏷️", id: "cats" },
-  { label: "Plant Guides",     sub: "Content",      icon: "📖", id: "guides" },
-  { label: "About Us",         sub: "Brand trust",  icon: "ℹ️", id: "about" },
-  { label: "Contact",          sub: "Support",      icon: "🎧", id: "contact" },
-  { label: "Users",            sub: "Access",       icon: "👥", id: "users" },
-  { label: "Orders",           sub: "Fulfillment",  icon: "📦", id: "orders" },
-  { label: "Settings",         sub: "System",       icon: "⚙️", id: "settings" },
-
 ];
 
 // ─── KPI data ─────────────────────────────────────────────────────────────────
@@ -323,6 +297,7 @@ function HealthBar({ item }) {
             </div>
         </div>
     );
+}
 
 function Sidebar({ active, onSelect }) {
   return (
@@ -378,49 +353,6 @@ function Sidebar({ active, onSelect }) {
         })}
       </nav>
     </aside>
-  );
-}
-
-function Topbar() {
-  const [query, setQuery] = useState("");
-  return (
-    <header style={{
-      background: "#fff", borderBottom: "0.5px solid #e5e7eb",
-      padding: "12px 24px", display: "flex", alignItems: "center",
-      justifyContent: "space-between", position: "sticky", top: 0, zIndex: 10,
-    }}>
-      <div>
-        <div style={{ fontSize: 10, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.8px", fontWeight: 500 }}>
-          Atelier Commerce Workspace
-        </div>
-        <div style={{ fontSize: 13, color: "#6b7280", marginTop: 1 }}>
-          Premium operations, analytics, and storefront control
-        </div>
-      </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <div style={{
-          display: "flex", alignItems: "center", gap: 8,
-          background: "#f9fafb", border: "0.5px solid #e5e7eb",
-          borderRadius: 7, padding: "6px 12px", minWidth: 220,
-        }}>
-          <span style={{ fontSize: 15, color: "#9ca3af" }}>🔍</span>
-          <input
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            placeholder="Search orders, products, customers…"
-            style={{
-              border: "none", background: "transparent", outline: "none",
-              fontSize: 13, color: "#374151", width: "100%",
-            }}
-          />
-        </div>
-        <div style={{
-          width: 30, height: 30, background: C.green, borderRadius: "50%",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: 11, fontWeight: 500, color: "#fff",
-        }}>AD</div>
-      </div>
-    </header>
   );
 }
 
@@ -660,7 +592,6 @@ export default function PlantAtelierDashboard() {
         </div>
     );
 
-  const [activeNav, setActiveNav] = useState("dashboard");
 
   return (
     <div style={{ display: "flex", fontFamily: "Inter, system-ui, sans-serif", minHeight: "100vh", background: "#f9fafb" }}>

@@ -17,17 +17,17 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-<<<<<<< HEAD
+
     "mongoose": "^9.7.0"
-=======
-    "mongoose": "^9.6.3"
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
+  
+
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
+
+
