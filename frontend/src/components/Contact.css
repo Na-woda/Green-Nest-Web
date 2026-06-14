@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+.contact-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fcfdfc;
+  font-family: 'Inter', sans-serif;
+  color: #1a221e;
+}
+
+/* ==========================================================================
+   1. HERO BANNER HEADER STYLING
+   ========================================================================== */
+.contact-hero-banner {
+  width: 100%;
+  min-height: 600px;
+  padding: 140px 24px 120px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-banner-content {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.help-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.contact-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.contact-hero-title span {
+  color: #a4d4ae;
+}
+
+.contact-hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #e2e8e5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   2. CORE INTERACTION SPLIT LAYOUT
+   ========================================================================== */
+.contact-core-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-core-content-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cpath fill='rgba(18, 88, 43, 0.12)' d='M90 5C125 38 152 75 138 120C113 93 74 52 34 69C46 32 60 18 90 5Z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cpath fill='rgba(18, 88, 43, 0.08)' d='M25 25C42 65 85 95 130 90C110 55 75 40 45 30C36 20 25 25 25 25Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10% 10%, 85% 75%;
+  background-size: 260px 260px, 210px 210px;
+  opacity: 0.9;
+  filter: blur(2px);
+  transform: translateY(6px);
+  z-index: 0;
+}
+
+.contact-core-content-wrapper>* {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Left Column Cards Arrangement */
+.contact-info-cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-structural-card {
+  background: #ffffff;
+  border: 1px solid #eef2f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.card-icon-frame {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eaf6ef;
+  color: #1b693e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-text-frame h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a221e;
+  margin: 0 0 6px 0;
+}
+
+.card-main-detail {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333d37;
+  margin: 0 0 2px 0;
+}
+
+.card-sub-detail {
+  font-size: 13px;
+  color: #707a74;
+  margin: 0;
+}
+
+/* Right Column Email Form Card styling */
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid #eef2f0;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.contact-interactive-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-input-block label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333d37;
+}
+
+.form-input-block input,
+.form-input-block textarea,
+.form-input-block select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dce2df;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a221e;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-input-block input:focus,
+.form-input-block textarea:focus,
+.form-input-block select:focus {
+  border-color: #1b693e;
+}
+
+.form-input-block textarea {
+  height: 140px;
+  resize: none;
+}
+
+/* Clean subject drop-down drop icon replacement */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.custom-select-wrapper::after {
+  content: '▾';
+  font-size: 12px;
+  color: #707a74;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.textarea-counter-row {
+  text-align: right;
+  font-size: 11px;
+  color: #909a94;
+  margin-top: -2px;
+}
+
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #1b693e;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.contact-submit-btn:hover {
+  background-color: #134f2e;
+}
+
+/* ==========================================================================
+   3. INFRASTRUCTURE EXTENSION BLOCK (WhatsApp Widget & Map Grid)
+   ========================================================================== */
+.contact-infrastructure-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+/* WhatsApp Horizontal Widget Style */
+.whatsapp-widget-card {
+  background: #ffffff;
+  border: 1px solid #eef2f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.whatsapp-card-icon-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #e8f9f0;
+  color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-card-text-frame h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a221e;
+  margin: 0 0 6px 0;
+}
+
+.whatsapp-card-text-frame p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555e58;
+  margin: 0 0 16px 0;
+}
+
+.whatsapp-interactive-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.whatsapp-interactive-btn:hover {
+  background-color: #1ebd58;
+}
+
+/* Maps Iframe Frame Box styling */
+.map-embed-wrapper-container {
+  background: #ffffff;
+  border: 1px solid #eef2f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.map-header-action-row {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #f4f7f5;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.map-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #dce2df;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1b693e;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.map-open-btn:hover {
+  background-color: #fcfdfc;
+}
+
+/* ==========================================================================
+   GLOBAL REUSE CORPORATE FOOTER STYLES
+   ========================================================================== */
+.footer {
+  background-color: #0c120f;
+  color: #ffffff;
+  padding: 80px 6% 30px 6%;
+  margin-top: 80px;
+  border-top: 1px solid #16201b;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.footer-logo span {
+  color: #b89243;
+}
+
+.footer-description {
+  color: #a0aba5;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.social-icon-btn:hover {
+  background-color: #b4d93c;
+  color: #0c120f;
+}
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.footer-links-list,
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  color: #a0aba5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links-list a:hover {
+  color: #b4d93c;
+}
+
+.footer-contact-list li {
+  display: flex;
+  gap: 10px;
+  color: #a0aba5;
+  font-size: 14px;
+}
+
+.footer-contact-list li svg {
+  color: #b4d93c;
+}
+
+.footer-contact-list a {
+  color: #a0aba5;
+  text-decoration: none;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+  margin-top: 20px;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright-text,
+.footer-legal-links a {
+  color: #616e66;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+.card-main-detail {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-main-detail:hover {
+  color: #2ecc71;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVENESS MEDIA OVERRIDES
+   ========================================================================== */
+@media (max-width: 992px) {
+
+  .contact-split-grid,
+  .contact-infrastructure-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero-title {
+    font-size: 36px;
+  }
+
+  .form-row-double {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    padding: 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

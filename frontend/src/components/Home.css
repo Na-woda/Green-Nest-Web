@@ -1,0 +1,1295 @@
+/* =========================================================
+   GLOBAL WRAPPER & BACKGROUND SETUP
+   ========================================================= */
+.home-wrapper {
+  width: 100%;
+  background-color: #080d0b; /* Seamless deep background matching our styling theme */
+}
+
+.hero-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  /* Blended overlay gradient with your local image asset */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.65), 
+      rgba(0, 0, 0, 0.75)
+    ),
+    url('/hero.jpeg'); 
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; /* Locked background setup */
+}
+
+
+/* =========================================================
+   HERO TYPOGRAPHY & LEFT ALIGNED LAYOUT STYLES
+   ========================================================= */
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;         
+  padding: 140px 6% 40px 6%; 
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  
+  /* Attaching the professional fade-in-up entrance animation */
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; 
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.highlight-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #b4d93c; 
+  font-weight: 500;
+}
+
+.hero-subtitle {
+  font-size: 15px; 
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  margin-bottom: 36px;
+}
+
+/* =========================================================
+   INTERACTIVE BUTTONS / CALL TO ACTION
+   ========================================================= */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background-color: #b4d93c; 
+  color: #0b1511; 
+  border: none;
+  padding: 12px 28px; 
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #9cbF30; 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(180, 217, 60, 0.15); 
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 12px 28px; 
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   3. CORE FEATURE BENEFITS MATRIX AREA (SCROLL ANIMATION ENGINE)
+   ========================================================= */
+.features-section {
+  position: relative;
+  background-color: #080d0b;
+  padding: 100px 6%;
+  width: 100%;
+  overflow: hidden;
+
+  /* Background overlay linear-gradient configured to optimize leaf details vs text readability */
+  background-image: linear-gradient(
+      rgba(8, 13, 11, 0.78), 
+      rgba(8, 13, 11, 0.84)
+    ),
+    url('/hero.jpeg'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; /* Locked background setup */
+}
+
+/* Shadow background implementation */
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Incorporates shadowimage.jpg as a subtle transparent overlay */
+  background-image: url('/shadowimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.features-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr; /* Balanced Split Grid layout frame */
+  gap: 50px;
+  align-items: center;
+  z-index: 2;
+
+  /* CSS Scroll-Driven entry tracking framework specifically for this section wrapper */
+  view-timeline-name: --featuresSection;
+  view-timeline-axis: block;
+}
+
+/* Left Image Box Frame converted to a tall vertical canvas for layered graphics */
+.features-image-frame {
+  position: relative;
+  width: 100%;
+  height: 560px; /* Generates a tall vertical space mirroring the adjacent cards list height */
+  border-radius: 16px;
+  overflow: visible; /* Allows fluid outer breathing boundaries for layers */
+}
+
+/* General core engine style for the stacked moving pictures */
+.features-moving-img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  /* Combined transform transition into one unified smooth duration curve */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s ease, 
+              filter 0.3s ease, 
+              z-index 0.3s step-end;
+  animation-fill-mode: both;
+}
+
+/* NEW: LAYER HOVER EFFECT - Smooth shift forward towards the cursor */
+.features-moving-img:hover {
+  transform: scale(1.06) translateY(-10px) !important; /* Forces layout pop above keyframe baseline loops */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75);
+  z-index: 10 !important; /* Forces the hovered image layer to instantly pop above the rest */
+  cursor: pointer;
+}
+
+/* Top Main Primary Layer Image Specs */
+.img-layer-primary {
+  width: 75%;
+  height: 280px;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Middle Overlapping Layer Image Specs */
+.img-layer-secondary {
+  width: 65%;
+  height: 240px;
+  bottom: 40px;
+  right: -10px;
+  z-index: 4;
+}
+
+/* Underlying Shadow Accented Third Image Specs */
+.img-layer-tertiary {
+  width: 50%;
+  height: 180px;
+  top: 40%;
+  left: 20%;
+  z-index: 2;
+  opacity: 0.65;
+  filter: grayscale(20%) blur(0.5px);
+}
+
+.img-layer-tertiary:hover {
+  opacity: 1;
+  filter: grayscale(0%) blur(0px);
+}
+
+/* --- SCROLL REVEAL BINDINGS FOR IMAGES --- */
+.animation-reveal-left {
+  animation: scrollRevealLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) both, elegantFloatUp 7s ease-in-out infinite alternate;
+  animation-timeline: --featuresSection, auto;
+  animation-range: entry 10% cover 40%, auto;
+}
+
+.animation-reveal-right {
+  animation: scrollRevealRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) both, elegantFloatDown 8s ease-in-out infinite alternate;
+  animation-timeline: --featuresSection, auto;
+  animation-range: entry 15% cover 45%, auto;
+}
+
+.animation-reveal-center {
+  animation: scrollRevealCenter 1.4s cubic-bezier(0.16, 1, 0.3, 1) both, elegantFloatUp 9s ease-in-out infinite alternate-reverse;
+  animation-timeline: --featuresSection, auto;
+  animation-range: entry 5% cover 35%, auto;
+}
+
+/* Right Text Layout Structure */
+.features-content-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.features-section-header {
+  margin-bottom: 35px;
+  animation-fill-mode: both;
+}
+
+.features-tagline {
+  color: #b4d93c; /* Label accented with signature lime brand color */
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.features-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.features-main-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65); 
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Quad Benefit Cards Grid Setup */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Premium Dark-Glassmorphic Benefit Box Component */
+.benefit-card {
+  background: rgba(10, 18, 14, 0.70); 
+  border: 1px solid rgba(255, 255, 255, 0.07); 
+  backdrop-filter: blur(16px); /* Strong frosted lens diffusion */
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start;
+  gap: 18px; 
+  animation-fill-mode: both;
+  
+  /* Smooth animation timing setup */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.4s ease;
+}
+
+/* Premium Tactile Glass Pop-Up Micro Interaction */
+.benefit-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  background: rgba(15, 25, 20, 0.85); 
+  border-color: rgba(180, 217, 60, 0.45); /* Crisp brand green border focus */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55), 
+              0 0 20px rgba(180, 217, 60, 0.08);
+}
+
+.benefit-icon-box {
+  color: #b4d93c; /* Tone icon to our signature brand accent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px; 
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.benefit-card:hover .benefit-icon-box {
+  transform: scale(1.1); 
+}
+
+/* Left Align Horizontal Layout Typography Elements Wrapper */
+.benefit-text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); /* Subtle text shadow for guaranteed readability */
+}
+
+.benefit-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65); /* Keeps white body copy readable and vibrant */
+  line-height: 1.55;
+}
+
+/* --- SCROLL REVEAL BINDINGS FOR RIGHT SIDE PANELS --- */
+.animation-fade-up {
+  animation: scrollFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --featuresSection;
+  animation-range: entry 5% cover 30%;
+}
+
+.animation-card-step-1 {
+  animation: scrollFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --featuresSection;
+  animation-range: entry 12% cover 35%;
+}
+
+.animation-card-step-2 {
+  animation: scrollFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --featuresSection;
+  animation-range: entry 16% cover 39%;
+}
+
+.animation-card-step-3 {
+  animation: scrollFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --featuresSection;
+  animation-range: entry 20% cover 43%;
+}
+
+.animation-card-step-4 {
+  animation: scrollFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --featuresSection;
+  animation-range: entry 24% cover 47%;
+}
+
+/* =========================================================
+   4. PLANT CATEGORIES GALLERY AREA CSS
+   ========================================================= */
+.categories-gallery-section {
+  background-color: #080d0b;
+  padding: 60px 6% 100px 6%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-gallery-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.categories-gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.categories-gallery-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Beautiful 3-Column Responsive Interactive Grid */
+.categories-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Individual Grid Card Frame Container */
+.category-gallery-card {
+  position: relative;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  /* Added absolute layout transform transition curves to seamlessly support cursor responses */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s ease;
+}
+
+/* NEW: LAYER CARD HOVER EFFECT - Subtle continuous layout displacement shift upward */
+.category-gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Target Images Inside the Categories Frame */
+.category-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Updated transitions scale parameters to achieve smoother fluid zooming animations on hover */
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Interaction Effect Trigger - Zoom scale update */
+.category-gallery-card:hover .category-gallery-img {
+  transform: scale(1.10); /* Enhanced slightly from 1.06 to make the movement distinct */
+}
+
+/* Dark Vignette Overlay Frame for Text Readability */
+.category-gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.category-gallery-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.category-gallery-count {
+  font-size: 12px;
+  color: #b4d93c; /* Accented item counter tag */
+  font-weight: 500;
+  border: 1px solid rgba(180, 217, 60, 0.4);
+  padding: 2px 10px;
+  border-radius: 20px;
+  width: fit-content;
+  background: rgba(180, 217, 60, 0.05);
+}
+
+/* =========================================================
+   NEW FEATURE SECTION: OUR MOST LOVED PLANTS
+   ========================================================= */
+.loved-plants-section {
+  background-color: #080d0b;
+  padding: 80px 6%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  
+  /* Attaching the Scroll-Driven Engine */
+  view-timeline-name: --lovedPlantsSection;
+  view-timeline-axis: block;
+}
+
+.loved-plants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 24px;
+}
+
+.loved-plants-tagline {
+  color: #b4d93c;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.loved-plants-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.loved-plants-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.view-all-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(180, 217, 60, 0.3);
+  transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+}
+
+.view-all-link:hover {
+  color: #b4d93c;
+  border-color: #b4d93c;
+  gap: 12px;
+}
+
+/* 4-Column Balanced Grid Layout Framework */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Product Glassmorphic Card Container Setup */
+.product-card {
+  background: rgba(16, 26, 21, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.4s ease,
+              background-color 0.3s ease;
+  
+  /* Hooking scroll viewport reveal micro engine */
+  animation: lovedPlantFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --lovedPlantsSection;
+  animation-range: entry 5% cover 30%;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  background: rgba(16, 26, 21, 0.85);
+  border-color: rgba(180, 217, 60, 0.35);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Showcase Wrapper inside Card */
+.product-card .image-container {
+  width: 100%;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.product-card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .image-container img {
+  transform: scale(1.08);
+}
+
+/* Interactive Badge Systems */
+.badge {
+  position: absolute;
+  top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+.badge-bestseller {
+  left: 12px;
+  background-color: #b89243; /* Elegant Gold */
+  color: #ffffff;
+}
+
+.badge-discount {
+  right: 12px;
+  background-color: #e05353; /* Warning Red Accent */
+  color: #ffffff;
+}
+
+.badge-purifier {
+  left: 12px;
+  background-color: #2b6140; /* Forest Green Accent */
+  color: #ffffff;
+}
+
+.badge-trending {
+  left: 12px;
+  background-color: #4a3f8a; /* Deep Royal Purple */
+  color: #ffffff;
+}
+
+.badge-flowering {
+  left: 12px;
+  background-color: #d16b9d; /* Soft Rose Pink */
+  color: #ffffff;
+}
+
+/* Typography Inside Product Details Pane */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+  color: #b4d93c;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.stars {
+  color: #b89243; /* Matching gold rating stars style */
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.reviews-count {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Price & CTA Interactive Controls Row */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.old-price {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: line-through;
+}
+
+/* Quick Add to Cart Circle Control Button */
+.add-to-cart-btn {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.add-to-cart-btn:hover {
+  background-color: #b4d93c;
+  border-color: #b4d93c;
+  color: #0b1511;
+  transform: scale(1.12);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.92);
+}
+
+/* =========================================================
+   5. EDITORIAL SHOWCASE STYLES (ZIG-ZAG TIMELINE)
+   ========================================================= */
+.editorial-showcase-section {
+  position: relative;
+  background-color: #080d0b;
+  padding: 100px 6%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Inject subtle dynamic background shadows matching user requirements */
+.editorial-showcase-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/shadowimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+  background-attachment: fixed; /* Locked background setup */
+}
+
+.editorial-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* Expansive elegant layout gaps */
+  z-index: 2;
+}
+
+.editorial-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  align-items: center;
+  
+  /* Modern CSS scroll timeline fade implementation */
+  view-timeline-name: --editorialRow;
+  view-timeline-axis: block;
+  animation-order: normal;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  animation-name: revealEditorialRow;
+  animation-timeline: --editorialRow;
+  animation-range: entry 15% cover 45%;
+}
+
+/* Row-specific Direction Swaps (Alternating Left/Right) */
+.editorial-row.img-right .editorial-text-pane { order: 1; }
+.editorial-row.img-right .editorial-image-pane { order: 2; }
+
+.editorial-row.img-left .editorial-text-pane { order: 2; }
+.editorial-row.img-left .editorial-image-pane { order: 1; }
+
+/* Text Blocks Styling */
+.editorial-text-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.editorial-tag {
+  color: #b4d93c;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.editorial-description {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* Interactive Call to Action buttons */
+.editorial-discover-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 4px 0;
+  border-bottom: 2px solid rgba(180, 217, 60, 0.3);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+}
+
+.editorial-discover-btn:hover {
+  color: #b4d93c;
+  border-color: #b4d93c;
+  gap: 12px;
+}
+
+/* Image Wrappers and Zoom Frame Canvas */
+.editorial-image-pane {
+  position: relative;
+  width: 100%;
+}
+
+.editorial-img-wrapper {
+  width: 100%;
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65);
+  /* Added transitions parameters onto frame wrapper to keep layout flow stable during moves */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s ease;
+}
+
+/* NEW: SECTION IMAGE CONTAINER MOUSEOVER - Adds matching interactive depth displacement */
+.editorial-img-wrapper:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.75);
+}
+
+.editorial-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro inner zoom animation combined smoothly with the wrapper shift */
+.editorial-img-wrapper:hover .editorial-main-img {
+  transform: scale(1.07);
+}
+
+/* =========================================================
+   6. INTERACTIVE NEWSLETTER SUBSCRIPTION SECTION
+   ========================================================= */
+.newsletter-section {
+  background-color: #080d0b;
+  padding: 60px 6% 100px 6%;
+  width: 100%;
+  position: relative;
+  
+  /* Blended overlay gradient with your local plant13 asset background */
+  background-image: linear-gradient(
+      rgba(8, 13, 11, 0.82), 
+      rgba(8, 13, 11, 0.88)
+    ),
+    url('/plant13.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(10, 18, 14, 0.70);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  
+  /* FIXED: Bounded the scroll animation framework below */
+  view-timeline-name: --newsletterSection;
+  view-timeline-axis: block;
+  animation: revealNewsletterBox 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: --newsletterSection;
+  animation-range: entry 10% cover 40%;
+}
+
+.newsletter-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.newsletter-tag {
+  color: #b4d93c;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.newsletter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.newsletter-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 6px 6px 18px;
+  border-radius: 40px;
+  align-items: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: rgba(180, 217, 60, 0.6);
+  box-shadow: 0 0 15px rgba(180, 217, 60, 0.1);
+}
+
+.newsletter-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  padding-right: 12px;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-submit-btn {
+  background-color: #b4d93c;
+  color: #0b1511;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: #9cbF30;
+  transform: translateY(-1px);
+}
+
+.btn-arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.newsletter-submit-btn:hover .btn-arrow-icon {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT MEDIA ADAPTATIONS
+   ========================================================= */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: 1fr; 
+  }
+  .categories-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .loved-plants-title {
+    font-size: 30px;
+  }
+  .editorial-row {
+    gap: 40px;
+  }
+  .editorial-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 968px) {
+  .features-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .features-image-frame {
+    height: 440px; /* Scales canvas on mobile layout columns seamlessly */
+  }
+  .categories-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .categories-gallery-title {
+    font-size: 28px;
+  }
+  
+  /* Fallback stack execution for Editorial sections on tablet devices */
+  .editorial-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .editorial-row.img-right .editorial-text-pane,
+  .editorial-row.img-left .editorial-text-pane { order: 1; }
+  .editorial-row.img-right .editorial-image-pane,
+  .editorial-row.img-left .editorial-image-pane { order: 2; }
+  
+  .editorial-img-wrapper {
+    height: 350px;
+  }
+  .editorial-container {
+    gap: 80px;
+  }
+  
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+    gap: 30px;
+  }
+  .newsletter-content {
+    align-items: center;
+  }
+  .newsletter-title {
+    font-size: 28px;
+  }
+  .newsletter-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .loved-plants-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-group {
+    flex-direction: column;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: 12px;
+  }
+  .newsletter-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-align: center;
+  }
+  .newsletter-submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+  }
+}
+
+/* =========================================================
+   ANIMATION KEYFRAMES
+   ========================================================= */
+/* Infinite loop animating components upwards */
+@keyframes elegantFloatUp {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+/* Counter-balanced loop animating components downwards */
+@keyframes elegantFloatDown {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(15px) rotate(-1deg);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal engines for Core Benefits Area */
+@keyframes scrollFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollRevealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollRevealRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollRevealCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Beautiful Scroll-Driven Cinematic reveal animation */
+@keyframes revealEditorialRow {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Fixed Scroll Viewport Reveal keyframes for Product Grid cards */
+@keyframes lovedPlantFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Reveal engine for the Newsletter Wrapper */
+@keyframes revealNewsletterBox {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
