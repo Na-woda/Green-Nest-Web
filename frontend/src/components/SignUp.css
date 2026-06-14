@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.signup-page-outer-boundary {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.55)),
+    url("../assets/1B.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 140vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.signup-page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.signup-header-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-main-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.signup-sub-title {
+  font-size: 15px;
+  color: #8fa098;
+  margin: 0;
+}
+
+/* Main Structured Foreground Input Card Container */
+.signup-form-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+/* Customer / Seller Selector Tabs UI */
+.signup-toggle-container {
+  display: flex;
+  background-color: #f1f5f3;
+  padding: 4px;
+  border-radius: 30px;
+  margin-bottom: 24px;
+}
+
+.signup-toggle-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #63736c;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.signup-toggle-tab.active {
+  background-color: #ffffff;
+  color: #0b1511;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.signup-core-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Row-wise input blocks configuration */
+.signup-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.signup-input-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #334139;
+}
+
+.signup-input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdfdc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0b1511;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.signup-input-group input:focus {
+  border-color: #1b693e;
+}
+
+/* Secure Hidden Characters Display Field Wrappers */
+.signup-password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.signup-eye-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7c8b82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.signup-eye-toggle-btn:hover {
+  color: #1b693e;
+}
+
+/* Alignment and configuration for terms verification checks */
+.signup-options-row {
+  display: flex;
+  align-items: flex-start;
+  margin: 4px 0;
+}
+
+.signup-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.signup-checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.signup-custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #b8beb9;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.signup-checkbox-label input:checked~.signup-custom-checkbox {
+  background-color: #1b693e;
+  border-color: #1b693e;
+}
+
+.signup-checkbox-label input:checked~.signup-custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.signup-checkbox-text {
+  font-size: 13px;
+  color: #4a5950;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.signup-checkbox-text a {
+  color: #1b693e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-checkbox-text a:hover {
+  text-decoration: underline;
+}
+
+/* Primary Execution Button */
+.signup-submit-btn {
+  background-color: #1b693e;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.signup-submit-btn:hover {
+  background-color: #145230;
+}
+
+/* Divider Elements styling */
+.signup-divider-line {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.signup-divider-line::before,
+.signup-divider-line::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e5e3;
+}
+
+.signup-divider-line span {
+  padding: 0 10px;
+  font-size: 12px;
+  color: #8a968f;
+  text-transform: lowercase;
+}
+
+/* Third-Party Federated Authentication Layout Blocks */
+.signup-social-row {
+  display: flex;
+  gap: 12px;
+}
+
+.signup-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid #dcdfdc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334139;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signup-social-btn:hover {
+  background-color: #f8faf9;
+}
+
+/* Card External Text Wrapper Reference Link */
+.signup-footer-text {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #4a5950;
+  text-align: center;
+}
+
+/* Reused Micro Minimalist Footer Layout Styles */
+.signup-footer {
+  background-color: #060b09;
+  padding: 24px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.signup-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.signup-footer-brand-col {
+  text-align: center;
+  max-width: 500px;
+}
+
+.signup-footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.signup-footer-logo span {
+  color: #b4d93c;
+}
+
+.signup-footer-description {
+  font-size: 12px;
+  color: #6a7b73;
+  margin: 0;
+}
+
+.signup-footer-bottom-bar {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 12px;
+}
+
+.signup-copyright-text {
+  font-size: 11px;
+  color: #4c5852;
+  margin: 0;
+}
+
+.signup-copyright-text a {
+  color: #1b693e;
+  text-decoration: none;
+  font-weight: 500;
+}
