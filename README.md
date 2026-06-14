@@ -4,3 +4,4 @@ Bringing nature indoors. This project is a plant website featuring premium indoo
 
 ## Live Test
 Testing a terminal push to the GitHub repository.
+## Syncing folders
