@@ -1,5 +1,5 @@
 import { useState } from "react";
-<<<<<<< HEAD
+
 import { useNavigate } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 
@@ -17,7 +17,7 @@ const C = {
     warnBg: "#faeeda",
     warnText: "#854f0b",
     barBg: "#f0f0f0",
-=======
+
 
 // ─── Color tokens ────────────────────────────────────────────────────────────
 const C = {
@@ -33,12 +33,12 @@ const C = {
   warnBg:    "#faeeda",
   warnText:  "#854f0b",
   barBg:     "#f0f0f0",
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
 };
 
 // ─── Sidebar nav items ────────────────────────────────────────────────────────
 const NAV = [
-<<<<<<< HEAD
+
     { label: "Dashboard", sub: "Overview", icon: "📊", id: "dashboard", path: "/admin" },
     { label: "Shop Management", sub: "Catalog", icon: "🛍️", id: "shop", path: "/admin/shop-management" },
     { label: "Categories", sub: "Taxonomy", icon: "🏷️", id: "cats" },
@@ -48,7 +48,7 @@ const NAV = [
     { label: "Users", sub: "Access", icon: "👥", id: "users" },
     { label: "Orders", sub: "Fulfillment", icon: "📦", id: "orders" },
     { label: "Settings", sub: "System", icon: "⚙️", id: "settings" },
-=======
+
   { label: "Dashboard",        sub: "Overview",     icon: "📊", id: "dashboard" },
   { label: "Home Management",  sub: "Homepage",     icon: "🏠", id: "home" },
   { label: "Shop Management",  sub: "Catalog",      icon: "🛍️", id: "shop" },
@@ -59,12 +59,12 @@ const NAV = [
   { label: "Users",            sub: "Access",       icon: "👥", id: "users" },
   { label: "Orders",           sub: "Fulfillment",  icon: "📦", id: "orders" },
   { label: "Settings",         sub: "System",       icon: "⚙️", id: "settings" },
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
 ];
 
 // ─── KPI data ─────────────────────────────────────────────────────────────────
 const TODAY_STATS = [
-<<<<<<< HEAD
+
     { label: "Orders today", value: "148", sub: "+18 ready to ship" },
     { label: "Revenue today", value: "$2,840", sub: "+9.2% vs yesterday" },
     { label: "Inventory health", value: "96%", sub: "8 items low stock" },
@@ -104,7 +104,7 @@ const HEALTH = [
     { name: "Storefront", sub: "Online", pct: 98 },
     { name: "Database", sub: "Healthy", pct: 96 },
     { name: "Product API", sub: "Operational", pct: 92 },
-=======
+
   { label: "Orders today",      value: "148",    sub: "+18 ready to ship" },
   { label: "Revenue today",     value: "$2,840", sub: "+9.2% vs yesterday" },
   { label: "Inventory health",  value: "96%",    sub: "8 items low stock" },
@@ -144,27 +144,25 @@ const HEALTH = [
   { name: "Storefront",   sub: "Online",      pct: 98 },
   { name: "Database",     sub: "Healthy",     pct: 96 },
   { name: "Product API",  sub: "Operational", pct: 92 },
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
 ];
 
 // ─── Shared style helpers ─────────────────────────────────────────────────────
 const card = {
-<<<<<<< HEAD
+
     background: "#fff",
     border: "0.5px solid #e5e7eb",
     borderRadius: 10,
     padding: "16px",
-=======
+
   background: "#fff",
   border: "0.5px solid #e5e7eb",
   borderRadius: 10,
   padding: "16px",
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
 };
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
-
-<<<<<<< HEAD
 
 function Topbar() {
     const [query, setQuery] = useState("");
@@ -325,7 +323,7 @@ function HealthBar({ item }) {
             </div>
         </div>
     );
-=======
+
 function Sidebar({ active, onSelect }) {
   return (
     <aside style={{
@@ -542,13 +540,13 @@ function HealthBar({ item }) {
       </div>
     </div>
   );
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
+
 }
 
 // ─── Main Dashboard Component ─────────────────────────────────────────────────
 
 export default function PlantAtelierDashboard() {
-<<<<<<< HEAD
+
     const [activeNav, setActiveNav] = useState("dashboard");
 
     return (
@@ -661,7 +659,7 @@ export default function PlantAtelierDashboard() {
             </div>
         </div>
     );
-=======
+
   const [activeNav, setActiveNav] = useState("dashboard");
 
   return (
@@ -771,5 +769,4 @@ export default function PlantAtelierDashboard() {
       </div>
     </div>
   );
->>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
 }
