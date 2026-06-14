@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 *,
 *::before,
 *::after {
@@ -12,6 +13,8 @@
   padding: 0;
 }
 
+=======
+>>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
 html,
 body,
 #root {
@@ -20,7 +23,11 @@ body,
 }
 
 body {
+<<<<<<< HEAD
   font-family: Inter, system-ui, sans-serif;
+=======
+  font-family: Inter, Arial, sans-serif;
+>>>>>>> d06e1560feb9f734b189518b6c4efb529af0567b
   background: #ffffff;
   overflow-x: hidden;
 }
